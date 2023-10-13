@@ -1,0 +1,59 @@
+import { useState, Fragment } from 'react'
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs'
+import WeeklySchedule from '../components/Schedule/WeeklySchedule'
+import { ScheduleEvent } from '../components/Event/EventCard'
+
+import WeeklyScheduleDemo from '../../demo/WeeklyScheduleDemo'
+import eventsData from '../../demo/eventsData'
+import { currentWeekEvents } from '../../demo/eventsData'
+
+<Meta title='Design System/WeeklySchedule' component={WeeklySchedule} />
+
+# WeeklySchedule
+
+WeeklySchedule dialogs.
+
+When requiring users to interact with the application,
+but without jumping to a new page and interrupting the user's workflow,
+you can use `WeeklySchedule` to create a new floating layer over the current page to get user feedback or display information.
+
+`Props` are listed at the end of this page.
+
+[View source](https://github.com/ahmedalatawi/react-beautiful-schedule/src/components/Schedule/WeeklySchedule)
+
+## Imports
+
+```js
+import { Modal } from 'artemis-ui'
+```
+
+## Usage
+
+Basic usage.
+
+<Canvas>
+  <Story name='basic'>
+    {(args) => {
+
+    function handleAddEvent(date) {
+      console.log({ date })
+    }
+
+    function handleClickEvent(day, dayISO, event) {
+      console.log({ day, dayISO, event })
+    }
+     return (
+        <WeeklyScheduleDemo
+           events={currentWeekEvents}
+           onAddEvent={handleAddEvent}
+           onClickEvent={handleClickEvent}
+        />
+      )
+    }}
+
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={WeeklySchedule} />
