@@ -39,5 +39,6 @@ module.exports = {
       favicon: './demo/favicon.gif',
     }),
   ],
+  output: { filename: '[name].bundle.js', path: path.resolve(__dirname, './demo/dist'), publicPath: '' },
   devtool: 'source-map',
 }
