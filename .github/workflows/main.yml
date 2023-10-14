@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build
 
 on:
   push:
@@ -10,24 +10,30 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node: [10, 12]
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      # Setup node environment
+      uses: actions/setup-node@v3
+      with:
+        # Node version. Run "node -v" to check the latest version
+        node-version: 16.x
+        registry-url: https://registry.npmjs.org/
+
       - name: Install project
         run: yarn install
+
       - name: Build the project
         run: yarn run build --if-present
+
       - name: Run tests
         run: yarn test
+
       - name: Run lint
         run: yarn lint
+
       - name: Run tsc
-        uses: icrawl/action-tsc@v1
+        uses: icrawl/action-tsc@v3
