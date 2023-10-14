@@ -10,7 +10,7 @@
 ## Installation:
 
 ```bash
-npm install react-beautiful-schedule --save
+npm install react-beautiful-schedule
 ```
 
 or
@@ -23,6 +23,6 @@ yarn add react-beautiful-schedule
 [npm-image]: https://img.shields.io/npm/v/react-beautiful-schedule
 [github-license]: https://img.shields.io/badge/license-MIT-green
 [github-license-url]: https://github.com/ahmedalatawi/react-beautiful-schedule/blob/main/LICENSE
-[github-build]: https://github.com/ahmedalatawi/react-beautiful-schedule/actions/workflows/publish.yml/badge.svg
-[github-build-url]: https://github.com/ahmedalatawi/react-beautiful-schedule/actions/workflows/publish.yml
+[github-build]: https://github.com/ahmedalatawi/react-beautiful-schedule/actions/workflows/main.yml/badge.svg
+[github-build-url]: https://github.com/ahmedalatawi/react-beautiful-schedule/actions/workflows/main.yml
 [npm-typescript]: https://img.shields.io/npm/types/react-beautiful-schedule
