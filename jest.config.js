@@ -1,5 +1,3 @@
-// Be aware of this issue: https://github.com/eslint/eslint/discussions/17215
-
 module.exports = {
   testEnvironment: 'jsdom',
   roots: ['./src'],
