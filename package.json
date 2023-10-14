@@ -115,6 +115,7 @@
   },
   "resolutions": {
     "strip-ansi": "^6.0.1",
-    "string-width": "^4.2.2"
+    "string-width": "^4.2.2",
+    "jackspeak": "2.1.1"
   }
 }
