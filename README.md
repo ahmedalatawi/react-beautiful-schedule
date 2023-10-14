@@ -21,7 +21,7 @@ yarn add react-beautiful-schedule
 
 [npm-url]: https://www.npmjs.com/react-beautiful-schedule
 [npm-image]: https://img.shields.io/npm/v/react-beautiful-schedule
-[github-license]: https://img.shields.io/github/license/ahmedalatawi/react-beautiful-schedule
+[github-license]: https://img.shields.io/badge/license-MIT-green
 [github-license-url]: https://github.com/ahmedalatawi/react-beautiful-schedule/blob/main/LICENSE
 [github-build]: https://github.com/ahmedalatawi/react-beautiful-schedule/actions/workflows/publish.yml/badge.svg
 [github-build-url]: https://github.com/ahmedalatawi/react-beautiful-schedule/actions/workflows/publish.yml
