@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import type { ScheduleEvent } from '../src/components/Event/EventCard'
+import type { ScheduleEventProps } from '../src/components/Event/EventCard'
 import StyledModal from './styled/StyledModal'
 import StyledFooter from './styled/StyledFooter'
 import StyledButton from './styled/StyledButton'
@@ -8,11 +8,11 @@ import WeeklySchedule from '../src/components/Schedule/WeeklySchedule'
 import type { ScheduleProps } from '../src/components/Schedule/Schedule.types'
 
 function WeeklyScheduleDemo({ events, ...props }: ScheduleProps) {
-  const [eventsData, setEventsData] = useState<ScheduleEvent[]>(events)
+  const [eventsData, setEventsData] = useState<ScheduleEventProps[]>(events)
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [selectedDate, setSelectedDate] = useState(new Date())
-  const [clickedEvent, setClickedEvent] = useState<ScheduleEvent | null>(null)
-  const [tempEvent, setTempEvent] = useState<ScheduleEvent | null>(null)
+  const [clickedEvent, setClickedEvent] = useState<ScheduleEventProps | null>(null)
+  const [tempEvent, setTempEvent] = useState<ScheduleEventProps | null>(null)
   const [key, setKey] = useState(0)
 
   // const date = DateTime.now().plus({ days: 1 }).toJSDate()
@@ -33,14 +33,14 @@ function WeeklyScheduleDemo({ events, ...props }: ScheduleProps) {
     showModal()
   }
 
-  function handleClickEvent(day: Date, dayISO: string | null, event: ScheduleEvent) {
+  function handleClickEvent(day: Date, dayISO: string | null, event: ScheduleEventProps) {
     console.log({ day, dayISO, event })
     setSelectedDate(day)
     setClickedEvent(event)
     showModal()
   }
 
-  function handleUpdateEvent(event: ScheduleEvent) {
+  function handleUpdateEvent(event: ScheduleEventProps) {
     console.log({ event })
     setTempEvent({ ...event })
   }
@@ -79,23 +79,10 @@ function WeeklyScheduleDemo({ events, ...props }: ScheduleProps) {
   })()
 
   return (
-    // <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 20 }}>
-    //   <StyledTestComponent theme={'secondary'} />
-    // </div>
     <>
       <StyledModal
         title='Event Form'
-        //placement='center'
-        //width='35rem'
         shape='rounded'
-        // HeaderComponent={() => (
-        //   <StyledHeader>
-        //     <div className='form__name'>Scheduling Form</div>
-        //     <StyledClose onClick={hideModal}>
-        //       <span>&times;</span>
-        //     </StyledClose>
-        //   </StyledHeader>
-        // )}
         visible={isModalVisible}
         onClose={hideModal}
         footer={
@@ -114,7 +101,6 @@ function WeeklyScheduleDemo({ events, ...props }: ScheduleProps) {
             >
               Save
             </StyledButton>
-            {/* <button className='form__button'>Confirm Information</button> */}
           </StyledFooter>
         }
       >

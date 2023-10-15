@@ -9,9 +9,7 @@ import eventsData from './eventsData'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 function App() {
-  return (
-    <WeeklyScheduleDemo showDateNavigator showFooter className='demo-schedule' footerLabel='task' events={eventsData} />
-  )
+  return <WeeklyScheduleDemo showDateNavigator showFooter className='demo-schedule' events={eventsData} />
 }
 
 root.render(

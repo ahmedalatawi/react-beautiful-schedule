@@ -17,6 +17,7 @@ function WeeklySchedule({
   onAddEvent,
   onClickEvent,
   onClickFooter,
+  ...props
 }: ScheduleProps) {
   const start = startDate ? DateTime.fromJSDate(startDate) : DateTime.now()
   const [selectedDate, setSelectedDate] = useState(start)
@@ -27,7 +28,7 @@ function WeeklySchedule({
   const days = interval.splitBy({ day: 1 }).map((d) => d.start) as DateTime[]
 
   return (
-    <Container className={className}>
+    <Container className={className} {...props}>
       <WeeklyScheduleContainer className='weekly-schedule'>
         {showDateNavigator && (
           <DateNavigator date={startDate} onSelectDate={(date) => setSelectedDate(DateTime.fromJSDate(date))} />

@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../../styles'
-import type { ScheduleEvent } from '../Event/EventCard'
+import type { ScheduleEventProps } from '../Event/EventCard'
 import { DateTime } from 'luxon'
 
 const { borderGrey } = colors
 
 interface Props {
-  events: ScheduleEvent[]
+  events: ScheduleEventProps[]
   day: DateTime
   label?: string
-  onClick?: (day: Date, events: ScheduleEvent[], totalHrs: number, totalDuration: number) => void
+  onClick?: (day: Date, events: ScheduleEventProps[], totalHrs: number, totalDuration: number) => void
 }
 
 function DayFooter({ events, day, label, onClick }: Props) {
@@ -44,11 +44,13 @@ function DayFooter({ events, day, label, onClick }: Props) {
     return acc + hours
   }, 0)
 
+  const totalHrsFixed = Number(totalHrs.toFixed(2))
+
   return (
     <Container className='day-footer' onClick={() => onClick?.(day.toJSDate(), dayEvents, totalHrs, totalDuration)}>{`${
       dayEvents.length
-    } ${label ? label : 'event'}${dayEvents.length !== 1 ? 's' : ''} (${totalHrs}hr${
-      totalHrs !== 1 ? 's' : ''
+    } ${label ? label : 'event'}${dayEvents.length !== 1 ? 's' : ''} (${totalHrsFixed}hr${
+      totalHrsFixed !== 1 ? 's' : ''
     })`}</Container>
   )
 }

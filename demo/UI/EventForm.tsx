@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import styled from 'styled-components'
 import ThemeSelect from './ThemeSelect'
-import type { EventDefaultTheme, ScheduleEvent } from '../../src/components/Event/EventCard'
+import type { EventDefaultTheme, ScheduleEventProps } from '../../src/components/Event/EventCard'
 import { DateTime, Interval } from 'luxon'
 
 const headingColor = '#47536a'
@@ -11,13 +11,13 @@ const placeholderColor = '#a9a9a9'
 
 interface Props {
   selectedDate: Date
-  clickedEvent?: ScheduleEvent | null
-  onChange: (event: ScheduleEvent) => void
+  clickedEvent?: ScheduleEventProps | null
+  onChange: (event: ScheduleEventProps) => void
 }
 
-type ScheduleEventKeys = keyof ScheduleEvent
+type ScheduleEventKeys = keyof ScheduleEventProps
 type Action = { key: ScheduleEventKeys | 'date'; value: string }
-type State = ScheduleEvent & { date: string }
+type State = ScheduleEventProps & { date: string }
 
 const initialState = {
   id: '',
@@ -33,7 +33,7 @@ function reducer(state: State, action: Action) {
   return { ...state, [action.key]: action.value }
 }
 
-function initializer(initialState: State, selectedDate: Date, clickedEvent: ScheduleEvent | null | undefined) {
+function initializer(initialState: State, selectedDate: Date, clickedEvent: ScheduleEventProps | null | undefined) {
   const now = DateTime.fromJSDate(selectedDate)
   const { id, title, start, end, description, defaultTheme, customTheme } = clickedEvent ?? initialState
 

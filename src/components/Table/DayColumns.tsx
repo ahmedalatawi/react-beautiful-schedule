@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import type { DateTime } from 'luxon'
 import DayFooter from './DayFooter'
 import DayEvents from './DayEvents'
-import type { ScheduleEvent } from '../Event/EventCard'
+import type { ScheduleEventProps } from '../Event/EventCard'
 import DayHeader from './DayHeader'
 import DayColumn from './DayColumn'
 import DayEmpty from './DayEmpty'
@@ -11,14 +11,14 @@ import DayAddEvent from './DayAddEvent'
 
 interface Props {
   days: DateTime[]
-  events: ScheduleEvent[]
+  events: ScheduleEventProps[]
   dayFormat?: string
   addNewEventLabel?: string
   showFooter?: boolean
   footerLabel?: string
   onAddEvent?: (day: Date) => void
-  onClickEvent?: (day: Date, dayISO: string | null, event: ScheduleEvent) => void
-  onClickFooter?: (day: Date, events: ScheduleEvent[], totalHrs: number, totalDuration: number) => void
+  onClickEvent?: (day: Date, dayISO: string | null, event: ScheduleEventProps) => void
+  onClickFooter?: (day: Date, events: ScheduleEventProps[], totalHrs: number, totalDuration: number) => void
 }
 
 function DayColumns({

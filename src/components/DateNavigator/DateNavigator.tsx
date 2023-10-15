@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { DateTime } from 'luxon'
 import styled from 'styled-components'
+import type { HTMLAttributes } from 'react'
 
 type Props = {
   date?: Date
   disablePrev?: boolean
   disableNext?: boolean
   onSelectDate?: (date: Date) => void
-} & React.HTMLAttributes<HTMLDivElement>
+} & HTMLAttributes<HTMLDivElement>
 
 function DateNavigator({ date, onSelectDate, disablePrev, disableNext, ...props }: Props) {
   const dateTime = date ? DateTime.fromJSDate(date) : DateTime.now()
