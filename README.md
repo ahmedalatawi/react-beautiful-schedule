@@ -20,6 +20,80 @@ or
 yarn add react-beautiful-schedule
 ```
 
+## Usage :
+
+Add `WeeklySchedule` to your component:
+
+```js
+import { useState } from 'react';
+import { ScheduleEventProps, WeeklySchedule } from 'react-beautiful-schedule';
+
+const eventsData = [
+  {
+    id: '1',
+    title: 'Event 1',
+    start: '2023-06-07T09:00:00',
+    end: '2023-06-07T10:15:00',
+  },
+  {
+    id: '2',
+    title: 'Event 2',
+    start: '2023-06-10T10:00:00',
+    end: '2023-06-10T11:30:00',
+    description: 'This is a description',
+    defaultTheme: 'yellow' as const,
+  },
+];
+
+function App() {
+  const [events, setEvents] = useState<ScheduleEventProps[]>(eventsData);
+
+  const startDate = new Date('2023-06-07T00:00:00');
+
+  function handleAddEvent(day: Date) {
+    let title = prompt('Event title');
+
+    if (title) {
+      const id = new Date().getTime().toString();
+      const newEvent = {
+        id,
+        title,
+        start: day.toISOString(),
+        end: day.toISOString(),
+      };
+      setEvents([...events, newEvent]);
+    }
+  }
+
+  function handleClickEvent(
+    day: Date,
+    dayISO: string | null,
+    event: ScheduleEventProps
+  ) {
+    console.log({ day, dayISO, event });
+    const title = prompt('Event title', event.title);
+
+    if (title) {
+      const updatedEvent = { ...event, title };
+      setEvents(events.map((e) => (e.id === event.id ? updatedEvent : e)));
+    }
+  }
+
+  return (
+    <WeeklySchedule
+      style={{ padding: '24px' }}
+      showDateNavigator
+      startDate={startDate} //this is optional - default is today's date
+      events={events}
+      onAddEvent={handleAddEvent}
+      onClickEvent={handleClickEvent}
+    />
+  );
+}
+
+export default App;
+```
+
 [npm-url]: https://www.npmjs.com/react-beautiful-schedule
 [npm-image]: https://img.shields.io/npm/v/react-beautiful-schedule
 [github-license]: https://img.shields.io/badge/license-MIT-green
