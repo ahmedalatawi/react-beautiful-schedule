@@ -1,6 +1,6 @@
 {
   "name": "react-beautiful-schedule",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple React weekly event schedule component",
   "main": "build/index.js",
   "module": "build/index.esm.js",
