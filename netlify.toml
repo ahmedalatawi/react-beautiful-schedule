@@ -1,0 +1,13 @@
+[build]
+command = "npm run build-webpack" 
+
+[[redirects]]
+from = "/home/*"
+to = "react-beautiful-schedule-demo.netlify.app/:splat"
+status = 200
+force = true
+
+from = "/demo/*"
+to = "react-beautiful-schedule.netlify.app/:splat"
+status = 200
+force = true
