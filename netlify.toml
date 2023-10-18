@@ -1,5 +1,5 @@
 [[redirects]]
 from = "/home/*"
-to = "/demo"
+to = "/react-beautiful-schedule-demo.netlify.app/:splat"
 status = 200
 force = true
