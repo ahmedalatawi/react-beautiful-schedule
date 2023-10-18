@@ -6,7 +6,7 @@
 [![Netlify Status][netlify]][netlify-url]
 [![License][github-license]][github-license-url]
 
-[**Live Demo**](https://react-beautiful-schedule-demo.netlify.app)
+[**Live demo**](https://react-beautiful-schedule-demo.netlify.app)
 
 ## Installation:
 
