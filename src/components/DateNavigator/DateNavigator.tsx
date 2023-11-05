@@ -36,7 +36,7 @@ function DateNavigator({ date, onSelectDate, disablePrev, disableNext, ...props 
     <Container className='date-navigator' {...props}>
       <Prev onClick={handlePrev} className='date-navigator-prev' disabled={disablePrev} />
       <DateContainer className='date-navigator-date'>
-        <span>{startDate.toLocaleString()}</span> - <span>{endDate.toLocaleString()}</span>
+        <span>{startDate.toFormat('MMM dd')}</span>-<span>{endDate.toFormat('dd, yyyy')}</span>
       </DateContainer>
       <Next onClick={handleNext} className='date-navigator-next' disabled={disableNext} />
     </Container>
@@ -58,7 +58,7 @@ const DateContainer = styled.div`
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 `
 
 const Next = styled.div<{ disabled?: boolean }>`

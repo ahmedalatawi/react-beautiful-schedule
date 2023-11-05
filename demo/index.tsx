@@ -19,7 +19,7 @@ function App() {
           rel='noopener noreferrer'
           href='https://github.com/ahmedalatawi/react-beautiful-schedule/tree/main/demo'
         >
-          demo source code
+          source code
         </a>
       </TitleContainer>
       <WeeklyScheduleDemo showDateNavigator showFooter className='demo-schedule' events={eventsData} />
@@ -30,8 +30,7 @@ function App() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  padding-top: 20px;
 `
 
 const Title = styled.h1`
