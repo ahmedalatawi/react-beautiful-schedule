@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../../styles'
-import type { ScheduleEventProps } from '../Event/EventCard'
+import type { ScheduleEventType } from '../Event/EventCard'
 import { DateTime } from 'luxon'
 
 const { borderGrey } = colors
 
 interface Props {
-  events: ScheduleEventProps[]
+  events: ScheduleEventType[]
   day: DateTime
   label?: string
-  onClick?: (day: Date, events: ScheduleEventProps[], totalHrs: number, totalDuration: number) => void
+  onClick?: (day: Date, events: ScheduleEventType[], totalHrs: number, totalDuration: number) => void
 }
 
 function DayFooter({ events, day, label, onClick }: Props) {

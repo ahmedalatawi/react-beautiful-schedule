@@ -26,7 +26,7 @@ Add `WeeklySchedule` to your component:
 
 ```js
 import { useState } from 'react';
-import { ScheduleEventProps, WeeklySchedule } from 'react-beautiful-schedule';
+import { ScheduleEventType, WeeklySchedule } from 'react-beautiful-schedule';
 
 const eventsData = [
   {
@@ -46,37 +46,42 @@ const eventsData = [
 ];
 
 function App() {
-  const [events, setEvents] = useState<ScheduleEventProps[]>(eventsData);
+  const [events, setEvents] = useState<ScheduleEventType[]>(eventsData);
 
   const startDate = new Date('2023-06-07T00:00:00');
 
   function handleAddEvent(day: Date) {
-    let title = prompt('Event title');
-
-    if (title) {
-      const id = new Date().getTime().toString();
-      const newEvent = {
-        id,
-        title,
-        start: day.toISOString(),
-        end: day.toISOString(),
-      };
-      setEvents([...events, newEvent]);
-    }
+    // add event logic goes here
+    //
+    // Example:
+    // let title = prompt('Event title');
+    // if (title) {
+    //   const id = new Date().getTime().toString();
+    //   const newEvent = {
+    //     id,
+    //     title,
+    //     start: day.toISOString(),
+    //     end: day.toISOString(),
+    //   };
+    //   setEvents([...events, newEvent]);
+    // }
   }
 
   function handleClickEvent(
     day: Date,
     dayISO: string | null,
-    event: ScheduleEventProps
+    event: ScheduleEventType
   ) {
-    console.log({ day, dayISO, event });
-    const title = prompt('Event title', event.title);
+    // edit event logic goes here
+    //
+    // Example:
+    // console.log({ day, dayISO, event });
+    // const title = prompt('Event title', event.title);
 
-    if (title) {
-      const updatedEvent = { ...event, title };
-      setEvents(events.map((e) => (e.id === event.id ? updatedEvent : e)));
-    }
+    // if (title) {
+    //   const updatedEvent = { ...event, title };
+    //   setEvents(events.map((e) => (e.id === event.id ? updatedEvent : e)));
+    // }
   }
 
   return (

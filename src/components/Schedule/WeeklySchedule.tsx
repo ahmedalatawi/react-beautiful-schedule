@@ -3,7 +3,7 @@ import DayColumns from '../Table/DayColumns'
 import styled from 'styled-components'
 import { DateTime, Interval } from 'luxon'
 import DateNavigator from '../DateNavigator/DateNavigator'
-import type { ScheduleProps } from './Schedule.types'
+import type { ScheduleType } from './Schedule.types'
 
 function WeeklySchedule({
   events,
@@ -18,7 +18,7 @@ function WeeklySchedule({
   onClickEvent,
   onClickFooter,
   ...props
-}: ScheduleProps) {
+}: ScheduleType) {
   const start = startDate ? DateTime.fromJSDate(startDate) : DateTime.now()
   const [selectedDate, setSelectedDate] = useState(start)
   const end = selectedDate.plus({ days: 7 })

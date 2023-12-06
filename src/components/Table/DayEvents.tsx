@@ -1,14 +1,14 @@
 import React from 'react'
-import type { ScheduleEventProps } from '../Event/EventCard'
+import type { ScheduleEventType } from '../Event/EventCard'
 import EventCard from '../Event/EventCard'
 import styled from 'styled-components'
 import { DateTime } from 'luxon'
 import { compareStartDates } from '../../utils/events'
 
 interface Props {
-  events: ScheduleEventProps[]
+  events: ScheduleEventType[]
   day: DateTime
-  onClickEvent?: (day: Date, dayISO: string | null, event: ScheduleEventProps) => void
+  onClickEvent?: (day: Date, dayISO: string | null, event: ScheduleEventType) => void
 }
 
 function DayEvents({ events, day, onClickEvent }: Props) {

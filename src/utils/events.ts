@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import type { EventDefaultTheme, ScheduleEventProps } from '../components/Event/EventCard'
+import type { EventDefaultTheme, ScheduleEventType } from '../components/Event/EventCard'
 import { themes } from '../styles'
 
 const { blue, darkBlue, lightBlue, yellow, green, purple, gray } = themes
@@ -25,6 +25,6 @@ export function getDefaultTheme(theme?: EventDefaultTheme) {
   }
 }
 
-export function compareStartDates(a: ScheduleEventProps, b: ScheduleEventProps) {
+export function compareStartDates(a: ScheduleEventType, b: ScheduleEventType) {
   return DateTime.fromISO(a.start).toMillis() - DateTime.fromISO(b.start).toMillis()
 }

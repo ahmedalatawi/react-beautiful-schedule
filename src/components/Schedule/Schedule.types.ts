@@ -1,7 +1,7 @@
-import type { ScheduleEventProps } from '../Event/EventCard'
+import type { ScheduleEventType } from '../Event/EventCard'
 
-export interface ScheduleProps extends React.HTMLAttributes<HTMLDivElement> {
-  events: ScheduleEventProps[]
+export interface ScheduleType extends React.HTMLAttributes<HTMLDivElement> {
+  events: ScheduleEventType[]
   startDate?: Date
   dayFormat?: string
   className?: string
@@ -10,6 +10,6 @@ export interface ScheduleProps extends React.HTMLAttributes<HTMLDivElement> {
   footerLabel?: string
   showDateNavigator?: boolean
   onAddEvent?: (day: Date) => void
-  onClickEvent?: (day: Date, dayISO: string | null, event: ScheduleEventProps) => void
-  onClickFooter?: (day: Date, events: ScheduleEventProps[], totalHrs: number, totalDuration: number) => void
+  onClickEvent?: (day: Date, dayISO: string | null, event: ScheduleEventType) => void
+  onClickFooter?: (day: Date, events: ScheduleEventType[], totalHrs: number, totalDuration: number) => void
 }

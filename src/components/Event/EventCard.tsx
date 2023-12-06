@@ -13,7 +13,7 @@ export type EventCustomTheme = {
   bgColor: string
 }
 
-export type ScheduleEventProps = {
+export type ScheduleEventType = {
   id: string
   title: string
   start: string
@@ -24,7 +24,7 @@ export type ScheduleEventProps = {
 }
 
 interface Props {
-  event: ScheduleEventProps
+  event: ScheduleEventType
   onClick?: () => void
 }
 
